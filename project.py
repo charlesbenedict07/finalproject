@@ -3,7 +3,7 @@ import tensorflow as tf
 
 @st.cache(allow_output_mutation=True, hash_funcs={tf.keras.models.Model: id})
 def load_model():
-    model = tf.keras.models.load_model('weather.h5')
+    model = tf.keras.models.load_model('model.h5')
     return model
 
 st.write("""
@@ -25,7 +25,7 @@ def import_and_predict(image_data, model):
     return prediction
 
 if file is None:
-    st.text("Please upload an image file")
+    st.text("Please upload an weather image file")
 else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
